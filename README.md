@@ -34,9 +34,9 @@ A continuación, simplemente tenemos que **realizar las siguientes operaciones:*
 | 1700 | 2200 |  200  |
 
 
->![alt cal1]((https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal1.png?raw=true))
+>![alt cal1](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal1.png?raw=true)
 >
->![alt cal2]((https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal2.png?raw=true))
+>![alt cal2](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal2.png?raw=true)
 > **Resultado:**
 > **(8.5 x 11)in**
 > 
