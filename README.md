@@ -49,9 +49,8 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 | 2200 | 200 | **0.393701** |
 
 > **Conversion:**
-><img raw="true" src="https://latex.codecogs.com/gif.latex?1700 / 200 / 0.393701 \approxeq 21.59">
-> 
-> $$2200 / 200 / 0.393701  \approxeq  27.94$$
+>![alt cal1](assets/calc1.png)
+> ![alt cal1](assets/calc2.png)
 > 
 > **$$Tamaño \enspace Carta:  21.59 \times 27.94$$**
 
