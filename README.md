@@ -49,9 +49,9 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 | 2200 | 200 | **0.393701** |
 
 > **Conversion:**
-> $$\begin{equation*}  1700 / 200 / 0.393701 \approxeq 21.59 \end{equation*}$$
+> $1700 / 200 / 0.393701 \approxeq 21.59$
 > 
-> $$\begin{equation*} 2200 / 200 / 0.393701  \approxeq  27.94\end{equation*}$$
+> $$2200 / 200 / 0.393701  \approxeq  27.94$$
 > 
 > **$$Tamaño \enspace Carta:  21.59 \times 27.94$$**
 
