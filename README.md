@@ -63,19 +63,17 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 >[^1]:> **Factor obtendio de:** 
 >![alt calc7](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc7.png?raw=true)
 
-###Cómo convertir de in a píxeles
+### Cómo convertir de in a píxeles
 Para convertir de in a píxeles tenemos que hacer la operación contraria a la anterior, es decir
 - Ancho (in) x ppp
 - Alto (in) x ppp
-> **$$\begin{aligned} 8.5 in \times 200ppp \approx 1700px \end{aligned}$$**
 > 
-> **$$\begin{aligned} 11 in \times 200ppp \approx 2200px \end{aligned}$$**
+> ![alt calc8](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc8.png?raw=true)
+> ![alt calc9](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc9.png?raw=true)
 
 
-###Cómo convertir de cm a píxeles
+### Cómo convertir de cm a píxeles
 Para convertir de cm a píxeles tenemos que hacer la operación contraria a la anterior, es decir:
-- Alto (cm) x ppp x 0,393701
-- Ancho (cm) x ppp x 0,393701
-> **$$\begin{aligned} 21.59cm \times 200px \times 0.393701 \approx 1700 \end{aligned}$$**
-> 
-> **$$\begin{aligned} 27.94cm \times 200px \times 0.393701  \approx 2200 \end{aligned}$$** 
+- Alto (cm) x ppp x 0,393701[^1]
+- Ancho (cm) x ppp x 0,393701[^1]
+> ![alt calc10](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc10.png?raw=true)
