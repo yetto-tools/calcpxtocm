@@ -68,6 +68,7 @@ Para convertir de in a píxeles tenemos que hacer la operación contraria a la a
 - Alto (in) x ppp
 > 
 > ![alt calc8](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc8.png?raw=true)
+> 
 > ![alt calc9](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc9.png?raw=true)
 
 
