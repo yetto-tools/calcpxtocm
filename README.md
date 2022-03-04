@@ -49,7 +49,7 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 | 2200 | 200 | **0.393701** |
 
 > **Conversion:**
-> $1700 / 200 / 0.393701 \approxeq 21.59$
+> - <img src="https://latex.codecogs.com/gif.latex?O_t=\text { 1700 / 200 / 0.393701 \approxeq 21.59 }" />
 > 
 > $$2200 / 200 / 0.393701  \approxeq  27.94$$
 > 
