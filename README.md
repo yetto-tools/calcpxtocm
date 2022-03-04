@@ -49,21 +49,19 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 | 2200 | 200 | **0.393701** |
 
 > **Conversion:**
+> 
 >![alt calc3](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc3.png?raw=true)
 > 
-> ![alt calc4](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc4.png?raw=true)
+>![alt calc4](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc4.png?raw=true)
 >
->![alt calc6](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc5.png?raw=true)
+>![alt calc5](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc5.png?raw=true)
 
 >**Convertir de cm a mm**
->**$$1cm = 10mm$$**
 >
->**$$1/10 = 0.1$$**
->
->**$$3.5cm/0.1 = 35mm$$**
+>![alt calc6](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc6.png?raw=true)
 
 >[^1]:> **Factor obtendio de:** 
->**$$1 in = 2.54cm \enspace 1/2.54 = 3937007874015748031496062992126 \enspace \approx 0.393701$$**
+>![alt calc7](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/calc7.png?raw=true)
 
 ###Cómo convertir de in a píxeles
 Para convertir de in a píxeles tenemos que hacer la operación contraria a la anterior, es decir
