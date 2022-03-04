@@ -5,12 +5,11 @@ Es probable que, si estás buscando información para pasar de píxeles a cm, ha
 **DPI** corresponde a las siglas de Dots Per Inch (puntos por pulgada) mientras que **PPP** hace referencia a píxeles por pulgada. Ambos términos hacen referencia a la resolución y son exactamente iguales. En algunos sitios puede que también veas PPI (Points Per Inch) pero de nuevo, hace referencia a los mismos conceptos.
 Cuando hablamos de **píxeles por pulgada** nos referimos a la resolución, es decir, la **cantidad de píxeles que hay dentro de una pulgada** o lo que es lo mismo, 2,54 centímetros.
 De lo anterior deducimos que **cuantos más píxeles haya por pulgada, mayor será la calidad** de la imagen. El claro ejemplo lo tenemos en las pantallas de los tablets y móviles de última generación con resoluciones de hasta 4k, ofreciendo una densidad de píxeles por pulgada muy alta con los que obtenemos un grado de definición difícil de superar.
-   ![alt dpi](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/dpi.jpg?raw=true)
+
+![alt dpi](https://github.com/yetto-tools/calcpxtocm/blob/main/assets/dpi.jpg?raw=true)
 
 
 Si quieres **imprimir una fotografía** que tienes en el ordenador, es conveniente que al menos lo hagas con una resolución de 150 píxeles por pulgada para obtener unos resultados aceptables. **A partir de 300 ppp** conseguimos resultados mejores.
-
-
 
 
 Si quieres saber cómo pasar de píxeles a centímetros, a continuación, te lo vamos a explicar paso a paso.
