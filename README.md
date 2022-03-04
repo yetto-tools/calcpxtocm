@@ -34,10 +34,9 @@ A continuación, simplemente tenemos que **realizar las siguientes operaciones:*
 | 1700 | 2200 |  200  |
 
 
->$$1700 / 200  = 8.5 in$$
+>![alt cal1]((https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal1.png?raw=true))
 >
->$$2200 / 200  = 11 in$$
-
+>![alt cal2]((https://github.com/yetto-tools/calcpxtocm/blob/main/assets/cal2.png?raw=true))
 > **Resultado:**
 > **(8.5 x 11)in**
 > 
@@ -49,8 +48,9 @@ Una vez que hemos hecho las divisiones anteriores, tenemos que pasar la **medida
 | 2200 | 200 | **0.393701** |
 
 > **Conversion:**
->![alt cal1](assets/calc1.png)
-> ![alt cal1](assets/calc2.png)
+> $$1700 / 200 / 0.393701 \approxeq 21.59 \end{equation*}$$
+> 
+> $$\begin{equation*} 2200 / 200 / 0.393701  \approxeq  27.94\end{equation*}$$
 > 
 > **$$Tamaño \enspace Carta:  21.59 \times 27.94$$**
 
