@@ -28,7 +28,7 @@ A continuación, simplemente tenemos que **realizar las siguientes operaciones:*
 | Width / ppp  |     Inch    |
 | Height / ppp |     Inch    |
 
-####Ejemplo:
+#### Ejemplo:
 |  Width   |  Heigh  |   PPP  |
 | -------- | ------- | ------ |
 | 1700 | 2200 |  200  |
