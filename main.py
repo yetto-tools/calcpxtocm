@@ -2,12 +2,14 @@ from msilib.schema import Icon
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QHBoxLayout, QTreeView, 
 QComboBox, QLabel, QVBoxLayout, QFileSystemModel, QWidget, QAction, QStyle, QMenu, QToolBar, 
 QMessageBox, QDialog, QFileDialog, QMenuBar, QCheckBox, QSizePolicy, QStatusBar,
-qApp, QFrame, QProgressDialog, QProgressBar, QInputDialog,QLineEdit
+qApp, QFrame, QProgressDialog, QProgressBar, QInputDialog, QDoubleSpinBox
 )
 from PyQt5.QtCore import pyqtSlot, QObject,  QSettings, Qt, QDir, QUrl, QStandardPaths, QFileInfo, QEventLoop, QPointF, QRect , QSize
 from PyQt5.QtGui import QIcon, QColor, QPainter, QFont
 
 import sys
+
+from sympy import preview
 
 
 class MainWindow(QMainWindow):
@@ -21,7 +23,7 @@ class MainWindow(QMainWindow):
 class Ui_MainWindow(object):
     
     def setupUi(self, MainWindow):
-        self.mesures = ['in', 'cm', 'mm', 'px']
+        self.mesures = [' in', ' cm', ' mm', ' px']
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
@@ -44,10 +46,15 @@ class Ui_MainWindow(object):
         self.lbl_height_2.setText(u"Altura:")
         self.lbl_height_2.setObjectName(u"lbl_height_2")
         self.lbl_height_2.setGeometry(QRect(20, 60, 47, 16))
-        self.txtWidth = QLineEdit(self.centralwidget)
+        self.txtWidth = QDoubleSpinBox(self.centralwidget)
+        self.txtWidth.setSuffix(' in')
+        self.txtWidth.selectAll()
+        self.txtWidth.setMaximum(999999.99)
         self.txtWidth.setObjectName(u"txtWidth")
         self.txtWidth.setGeometry(QRect(20, 30, 113, 20))
-        self.txtHeight = QLineEdit(self.centralwidget)
+        self.txtHeight = QDoubleSpinBox(self.centralwidget)
+        self.txtHeight.setSuffix(' in')
+        self.txtHeight.setMaximum(999999.99)
         self.txtHeight.setObjectName(u"txtHeight")
         self.txtHeight.setGeometry(QRect(20, 80, 113, 20))
         self.cmbMesure01 = QComboBox(self.centralwidget)
@@ -56,6 +63,7 @@ class Ui_MainWindow(object):
         self.cmbMesure01.setGeometry(QRect(200, 54, 111, 22))
         self.cmbMesure02 = QComboBox(self.centralwidget)
         self.cmbMesure02.addItems(self.mesures)
+        self.cmbMesure02.setCurrentIndex(3)
         self.cmbMesure02.setObjectName(u"cmbMesure02")
         self.cmbMesure02.setGeometry(QRect(200, 155, 111, 22))
         self.cbxChain01 = QCheckBox(self.centralwidget)
@@ -70,16 +78,20 @@ class Ui_MainWindow(object):
         self.cbxChain02.setGeometry(QRect(150, 160, 41, 17))
         self.cbxChain02.setIcon(icon)
         self.cbxChain02.setIconSize(QSize(24, 24))
-        self.txtAspectRateX = QLineEdit(self.centralwidget)
+        self.txtAspectRateX = QDoubleSpinBox(self.centralwidget)
+        self.txtAspectRateX.setMaximum(2190.00)
+        self.txtAspectRateX.setValue(300.00)
         self.txtAspectRateX.setObjectName(u"txtAspectRateX")
         self.txtAspectRateX.setGeometry(QRect(20, 140, 113, 20))
-        self.txtAspectRateY = QLineEdit(self.centralwidget)
+        self.txtAspectRateY = QDoubleSpinBox(self.centralwidget)
+        self.txtAspectRateY.setMaximum(2190.00)
+        self.txtAspectRateY.setValue(300.00)
         self.txtAspectRateY.setObjectName(u"txtAspectRateY")
         self.txtAspectRateY.setGeometry(QRect(20, 190, 113, 20))
-        self.txtWidthResult = QLineEdit(self.centralwidget)
+        self.txtWidthResult = QDoubleSpinBox(self.centralwidget)
         self.txtWidthResult.setObjectName(u"txtWidthResult")
         self.txtWidthResult.setGeometry(QRect(20, 260, 113, 20))
-        self.txtHeightResult = QLineEdit(self.centralwidget)
+        self.txtHeightResult = QDoubleSpinBox(self.centralwidget)
         self.txtHeightResult.setObjectName(u"txtHeightResult")
         self.txtHeightResult.setGeometry(QRect(200, 260, 113, 20))
         self.lbl_ppp_x = QLabel(self.centralwidget)
@@ -91,9 +103,11 @@ class Ui_MainWindow(object):
         self.lbl_ppp_y.setText(u"Resolucion Y:")
         self.lbl_ppp_y.setGeometry(QRect(20, 170, 71, 16))
         self.lbl_mesure01 = QLabel(self.centralwidget)
+        self.lbl_mesure01.setText("Medida:")
         self.lbl_mesure01.setObjectName(u"lbl_mesure01")
         self.lbl_mesure01.setGeometry(QRect(200, 34, 47, 16))
         self.lbl_mesure02 = QLabel(self.centralwidget)
+        self.lbl_mesure02.setText("Medida:")
         self.lbl_mesure02.setObjectName(u"lbl_mesure02")
         self.lbl_mesure02.setGeometry(QRect(200, 135, 47, 16))
         self.lbl_width_result = QLabel(self.centralwidget)
@@ -125,11 +139,63 @@ class Ui_MainWindow(object):
         self.menubar.addAction(self.menu_Archivo.menuAction())
         self.menubar.addAction(self.menu_About.menuAction())
         self.menu_About.addAction(self.action)
-        
         self.cbxChain01.stateChanged.connect(lambda:self.chainIcon())
+        self.cmbMesure01.currentTextChanged.connect(self.mesureactivate)
+        
+        self.mesure_preview = ' in'
+
+        def txtWidhtSelectAll(self):
+            self.txtWidht.selectAll()
+
 
     def chainIcon(self):
         self.cbxChain01.setIcon(QIcon('./assets/chain-broken.png'))
+
+    def mesureactivate(self, value):
+        w = self.txtWidth.value()
+        h = self.txtHeight.value()
+
+
+        if self.txtWidth.suffix() == ' in' and self.txtHeight.suffix() == ' in':
+            if self.cmbMesure01.currentText() == ' cm':
+                self.txtWidth.setValue( self.txtWidth.value()  / 0.393701 )
+                self.txtHeight.setValue( self.txtHeight.value()  / 0.393701 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+
+            if self.cmbMesure01.currentText() == ' mm':
+                self.txtWidth.setValue( self.txtWidth.value()  / 0.0393701 )
+                self.txtHeight.setValue( self.txtHeight.value()  / 0.0393701 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+        
+        if self.txtWidth.suffix() == ' cm' and self.txtHeight.suffix() == ' cm':
+            if self.cmbMesure01.currentText() == ' in':
+                self.txtWidth.setValue( self.txtWidth.value()  * 0.393701 )
+                self.txtHeight.setValue( self.txtHeight.value()  * 0.393701 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+
+            if self.cmbMesure01.currentText() == ' mm':
+                self.txtWidth.setValue( self.txtWidth.value()  * 0.1 )
+                self.txtHeight.setValue( self.txtHeight.value()  * 0.1 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+
+        if self.txtWidth.suffix() == ' mm' and self.txtHeight.suffix() == ' mm':
+            if self.cmbMesure01.currentText() == ' in':
+                self.txtWidth.setValue( self.txtWidth.value()  * 0.0393701 )
+                self.txtHeight.setValue( self.txtHeight.value()  * 0.0393701 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+
+            if self.cmbMesure01.currentText() == ' cm':
+                self.txtWidth.setValue( self.txtWidth.value()  / 0.1 )
+                self.txtHeight.setValue( self.txtHeight.value()  / 0.1 )
+                self.txtWidth.setSuffix(self.cmbMesure01.currentText())
+                self.txtHeight.setSuffix(self.cmbMesure01.currentText())
+
+        self.mesure_preview = value
 
 
 
